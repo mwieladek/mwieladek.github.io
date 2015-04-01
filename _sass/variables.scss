@@ -1,20 +1,18 @@
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
-
-  // Our variables
+// Our variables
 $base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$brand-font-family: mathilde, cusive;
+$headings-font-family: 'Pompiere', cursive;
 
-$spacing-unit:     30px;
+$base-font-size:      16px;
 
-$text-color:       #100;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:         black;
+$brand-accent-color:  rgb(189, 47, 72);
+$text-color:          #100;
 
-$facebook-color:   #3b5998;
-$twitter-color:    #00aced;
-$pinterest-color:  #cb2027;
-$instagram-color:  #517fa4;
+$facebook-color:      #3b5998;
+$twitter-color:       #00aced;
+$pinterest-color:     #cb2027;
+$instagram-color:     #517fa4;
 
