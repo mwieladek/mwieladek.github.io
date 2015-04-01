@@ -1,15 +1,16 @@
+---
+---
 @charset "utf-8";
+
+
+// Import custom variables
+@import "variables";
+
+// Import frameworks
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../bower_components/font-awesome/scss/font-awesome";
 
 
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+// Import personal styles
+@import "social";
 
-$spacing-unit:     30px;
-
-$text-color:       #100;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
