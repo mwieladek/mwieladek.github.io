@@ -43,3 +43,13 @@ header {
     }
   }
 }
+
+footer {
+
+  font-family: $headings-font-family;
+  font-size: 1.2em;
+
+  div { margin: 5px 0; }
+
+  .fa {color: $brand-accent-color;}
+}
