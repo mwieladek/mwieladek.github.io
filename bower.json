@@ -1,0 +1,25 @@
+{
+  "name": "mwieladek.github.io",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mwieladek/mwieladek.github.io",
+  "authors": [
+    "JLBoor"
+  ],
+  "description": "A Simple Life Blog",
+  "keywords": [
+    "simple",
+    "life",
+    "blog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.4"
+  }
+}
