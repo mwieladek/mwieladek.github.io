@@ -1,4 +1,9 @@
+$content-margin: 4em;
+
 header {
+
+  margin-bottom: $content-margin;
+
   .nav-social {
 
     margin: 10px;
@@ -45,7 +50,7 @@ header {
 }
 
 footer {
-
+  margin-top: $content-margin;
   font-family: $headings-font-family;
   font-size: 1.2em;
 
