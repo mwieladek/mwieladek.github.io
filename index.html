@@ -11,8 +11,11 @@ layout: default
     {% for post in site.posts %}
         <div class="brick brick-hidden brick-{{post.categories}} {% if post.cover-width %}brick-width-{{ post.cover-width }}{% endif %} {% if post.cover-height %}brick-height-{{ post.cover-height }}{% endif %}">
           <div class="brick-content" style="background-image: url(/resources/img/{{post.cover}})">
-              <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+              <a href="{{ post.url | prepend: site.baseurl }}">
+                <div class="brick-content-details">
+                </div>
+              </a>
           </div>
         </div>
     {% endfor %}

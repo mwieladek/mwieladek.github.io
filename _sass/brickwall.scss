@@ -1,23 +1,31 @@
 #brickwall {
 
-  .brick {
-    padding: .5em;
-    transition: .5s;
+  $transition-speed: 1s;
+  $default-padding: .5em;
 
-    &.brick-hidden {
-      //display: none;
-      //width: 0!important;
-      //height: 0!important;
-      opacity: 0;
-      transform: scale(0.001);
-    }
+  .brick {
+    transition: $transition-speed;
+    padding: $default-padding;
+
+    &.brick-hidden { opacity: 0; transform: scale(0.001); }
+    &.brick-ignored .brick-content .brick-content-details { opacity: 1; }
 
     .brick-content {
       width: 100%;
       height: 100%;
       background-size: cover;
       background-position: 50% 50%;
+      transition: $transition-speed;
+
+      .brick-content-details {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        transition: $transition-speed;
+        background-color: rgba(0,0,0,.4);
+      }
     }
+
   }
 
   @mixin brick-layout($brick-height, $nb-columns) {

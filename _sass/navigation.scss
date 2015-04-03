@@ -52,7 +52,8 @@ header {
 
     a {
       color: $headings-color;
-      &:hover {
+      &:hover,
+      &:focus {
         text-decoration: none;
         color: $brand-accent-color;
       }

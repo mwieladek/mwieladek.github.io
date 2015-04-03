@@ -72,4 +72,12 @@ $(document).ready(function() {
     _initHeadRoom();
     _showBricks();
 
+    $('.brick').on('mouseenter focusin', function() {
+        $(this).siblings('.brick-visible').addClass('brick-ignored');
+    });
+
+    $('.brick').on('mouseleave focusout', function() {
+        $('.brick-visible').removeClass('brick-ignored');
+    });
+
 });
