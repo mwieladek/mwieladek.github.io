@@ -1,9 +1,38 @@
 $(document).ready(function() {
 
     /**
-     * Initialize the menu so it's hides and shows the right elements.
-     * It also redirects the user to the right page when accessed from a post
+     * Function that shows and hides bricks
+     * @category if null, shows everything otherwise only the @category
      */
+    var _showBricks = function(category) {
+
+        var hideSelector;
+        var showSelector = '.brick';
+
+        if(category) {
+            var categoryClass = showSelector + '-' + category;
+            hideSelector = showSelector + ':not(' + categoryClass + ')';
+            showSelector += categoryClass;
+        }
+
+        // Show bricks
+        $(showSelector)
+            .addClass('brick-visible')
+            .removeClass('brick-hidden');
+
+        // Hide bricks when needed
+        if(hideSelector) {
+            $(hideSelector)
+                .removeClass('brick-visible')
+                .addClass('brick-hidden');
+        }
+
+        masonry = new Masonry(document.querySelector('#brickwall'), {
+            itemSelector: '.brick-visible',
+            columnWidth: '.brick-sizer'
+        });
+    };
+
     var _initMenu = function() {
 
         var hiddenClass = 'brick-hidden';
@@ -12,16 +41,14 @@ $(document).ready(function() {
 
         // Attach the filter to each navigation like
         categories.forEach(function(category) {
+
             $('.nav-' + category).on('click', function() {
-                $('.brick').addClass(hiddenClass);
-                $('.brick-' + category).removeClass(hiddenClass);
+                _showBricks(category)
             });
         });
 
         // The logo cancel the filters
-        $logo.on('click', function() {
-            $('.brick').removeClass(hiddenClass);
-        });
+        $logo.on('click', function() { _showBricks(); });
     };
 
 
@@ -38,21 +65,11 @@ $(document).ready(function() {
     };
 
 
-    var _initBrickWall = function() {
-        var container = document.querySelector('#brickwall');
-        var msnry = new Masonry(container, {
-            itemSelector: '.brick',
-            columnWidth: '.brick-sizer'
-        });
-    };
-
-
-
     /**
      * Execute the function
      */
     _initMenu();
     _initHeadRoom();
-    _initBrickWall();
+    _showBricks();
 
 });
