@@ -4,11 +4,13 @@ layout: default
 
 <div>
 
-  <div class="row brickwall">
+  <div id="brickwall">
+
+      <div class="brick-sizer"></div>
 
     {% for post in site.posts %}
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 brick brick-{{post.categories}}">
-          <div class="brick-content">
+        <div class="brick brick-{{post.categories}} {% if post.cover-width %}brick-width-{{ post.cover-width }}{% endif %} {% if post.cover-height %}brick-height-{{ post.cover-height }}{% endif %}">
+          <div class="brick-content" style="background-image: url(/resources/img/{{post.cover}})">
               <span>{{ post.date | date: "%b %-d, %Y" }}</span>
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </div>

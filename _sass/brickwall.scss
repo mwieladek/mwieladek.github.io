@@ -1,20 +1,16 @@
-.brickwall {
-
-  padding: 1.5em;
+#brickwall {
 
   .brick {
-    height: 250px;
     padding: .5em;
-    transition: .5s;
+    //transition: .5s;
 
-    .brick-content { width: 100%; height: 100%; }
-
+    .brick-content {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
   }
-
-  .brick-life .brick-content     { background: pink; }
-  .brick-wellness .brick-content { background: lightgrey; }
-  .brick-recipes .brick-content  { background: lightgreen; }
-  .brick-travel .brick-content   { background: lightsalmon; }
 
   .brick-hidden {
     opacity: 0;
@@ -22,6 +18,38 @@
     width: 0;
     padding: 0;
     margin: 0;
+  }
+
+  @mixin brick-layout($brick-height, $nb-columns) {
+    $brick-height-px: 1px * $brick-height;
+    $brick-sizer: 100% / $nb-columns;
+
+    .brick, .brick-sizer { width: $brick-sizer; }
+    .brick { height: $brick-height-px; }
+
+    @if($nb-columns > 1) {
+      .brick.brick-width-2 { width: $brick-sizer * 2; }
+      .brick.brick-height-2 { height: $brick-height-px * 2; }
+    }
+  }
+
+  // Phones
+  @media (max-width: $screen-xs-max) {
+    @include brick-layout(200, 1);
+  }
+
+  // Tablets
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    @include brick-layout(200, 3);
+  }
+  // Medium desktop
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    @include brick-layout(200, 4);
+  }
+
+  // Large desktop
+  @media (min-width: $screen-lg-min) {
+    @include brick-layout(250, 5);
   }
 
 }

@@ -21,16 +21,16 @@ header {
         width: 1.5em;
         height: 1.5em;
         text-align: center;
-        &.nav-social-twitter:hover {
+        &.nav-social-twitter:hover, &.nav-social-twitter:focus {
           background-color: $twitter-color;
         }
-        &.nav-social-pinterest:hover {
+        &.nav-social-pinterest:hover, &.nav-social-pinterest:focus {
           background-color: $pinterest-color;
         }
-        &.nav-social-facebook:hover {
+        &.nav-social-facebook:hover, &.nav-social-facebook:focus {
           background-color: $facebook-color;
         }
-        &.nav-social-instagram:hover {
+        &.nav-social-instagram:hover, &.nav-social-instagram:focus {
           background-color: $instagram-color;
         }
       }

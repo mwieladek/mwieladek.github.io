@@ -38,10 +38,21 @@ $(document).ready(function() {
     };
 
 
+    var _initBrickWall = function() {
+        var container = document.querySelector('#brickwall');
+        var msnry = new Masonry(container, {
+            itemSelector: '.brick',
+            columnWidth: '.brick-sizer'
+        });
+    };
+
+
+
     /**
      * Execute the function
      */
     _initMenu();
     _initHeadRoom();
+    _initBrickWall();
 
 });
