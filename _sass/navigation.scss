@@ -3,6 +3,7 @@ $content-margin: 4em;
 header {
 
   margin-bottom: $content-margin;
+  background-color: white;
 
   .nav-social {
 
@@ -20,10 +21,18 @@ header {
         width: 1.5em;
         height: 1.5em;
         text-align: center;
-        &.nav-social-twitter:hover { background-color: $twitter-color; }
-        &.nav-social-pinterest:hover { background-color: $pinterest-color; }
-        &.nav-social-facebook:hover { background-color: $facebook-color; }
-        &.nav-social-instagram:hover { background-color: $instagram-color; }
+        &.nav-social-twitter:hover {
+          background-color: $twitter-color;
+        }
+        &.nav-social-pinterest:hover {
+          background-color: $pinterest-color;
+        }
+        &.nav-social-facebook:hover {
+          background-color: $facebook-color;
+        }
+        &.nav-social-instagram:hover {
+          background-color: $instagram-color;
+        }
       }
     }
   }
@@ -37,7 +46,9 @@ header {
     font-family: $headings-font-family;
     font-size: 2em;
 
-    .list-inline > li { padding: 0 1.5em; }
+    .list-inline > li {
+      padding: 0 1.5em;
+    }
 
     a {
       color: $headings-color;
@@ -46,6 +57,25 @@ header {
         color: $brand-accent-color;
       }
     }
+
+    &.navbar-fixed-top {
+      background: white;
+      border-bottom: 1px solid;
+      box-shadow: 0 0 3px;
+      padding-top: 10px;
+      transition: transform .5s;
+    }
+  }
+
+  &.headroom--unpinned {
+    .navbar-fixed-top { transform: translateY(-100%); };
+  }
+
+  &.headroom--top .navbar-fixed-top { display: none; }
+
+  &.headroom--pinned {
+    &.headroom--top .navbar-fixed-top { display: none; }
+    &.headroom--not-top .navbar-fixed-top { display: block; transform: translateY(0%); }
   }
 }
 
@@ -58,3 +88,4 @@ footer {
 
   .fa {color: $brand-accent-color;}
 }
+
