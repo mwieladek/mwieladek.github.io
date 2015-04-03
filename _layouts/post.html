@@ -1,18 +1,26 @@
----
-layout: default
----
-<div>
+<!DOCTYPE html>
+<html>
 
-  <style> .item { width: 50%; heigth: 100px; background: red;}</style>
+{% include head.html %}
 
-  <div class="item">
-    ABC
-  </div>
-  <div class="item">
-    DEF
-  </div>
-  <div class="item">
-    CGD
-  </div>
+<body class="blog-post">
 
+{% include header.html %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <h1>{{ page.title }}</h1>
+      {% if page.cover %} <div class="cover" style="background-image: url(/resources/img/{{ page.cover }});"></div> {% endif %}
+
+      {{ content }}
+    </div>
+    <div class="col-sm-3">{% include welcome.html %}</div>
+  </div>
 </div>
+
+{% include footer.html %}
+
+</body>
+
+</html>
