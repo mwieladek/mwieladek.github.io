@@ -10,12 +10,19 @@ layout: default
 
     {% for post in site.posts %}
         <div class="brick brick-hidden brick-{{post.categories}} {% if post.cover-width %}brick-width-{{ post.cover-width }}{% endif %} {% if post.cover-height %}brick-height-{{ post.cover-height }}{% endif %}">
+
           <div class="brick-content" style="background-image: url(/resources/img/{{post.cover}})">
 
+              <div class="pin-button">
+                  <a href="//www.pinterest.com/pin/create/button/?url={{post.url | prepend: site.baseurl | prepend: site.url | uri_escape }}&media={{ '/resources/img/' | append:post.cover | prepend: site.baseurl | prepend: site.url | uri_escape }}&description={{ post.excerpt | uri_escape}}" data-pin-do="buttonPin" data-pin-shape="round" data-pin-height="32">
+                      <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" />
+                  </a>
+              </div>
+
               <a href="{{ post.url | prepend: site.baseurl }}">
-                <div class="brick-content-details">
-                </div>
+                <div class="brick-content-details"></div>
               </a>
+
           </div>
         </div>
     {% endfor %}

@@ -24,6 +24,26 @@
         transition: $transition-speed;
         background-color: rgba(0,0,0,.4);
       }
+
+      .pin-button {
+        position: absolute!important;
+        top: 1em;
+        right: 1em;
+        opacity: 0;
+        transition: $transition-speed;
+
+        a {
+          z-index: 9999;
+          &:hover {
+            box-shadow: 0 0 10px black;
+            border-radius: 50%;
+            transition: box-shadow .2s;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &:hover .pin-button { opacity: 1; }
     }
 
   }
@@ -48,16 +68,16 @@
 
   // Tablets
   @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    @include brick-layout(200, 3);
+    @include brick-layout(200, 2);
   }
   // Medium desktop
   @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-    @include brick-layout(200, 4);
+    @include brick-layout(200, 3);
   }
 
   // Large desktop
   @media (min-width: $screen-lg-min) {
-    @include brick-layout(250, 5);
+    @include brick-layout(250, 4);
   }
 
 }
