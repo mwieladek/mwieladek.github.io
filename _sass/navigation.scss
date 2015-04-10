@@ -40,6 +40,14 @@ header {
   .header-brand {
     font-family: $brand-font-family;
     font-size: 120px;
+
+    a {
+      color: $headings-color;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
   }
 
   .header-navigation {
@@ -50,10 +58,12 @@ header {
       padding: 0 1.5em;
     }
 
+
     a {
       color: $headings-color;
       &:hover,
-      &:focus {
+      &:focus,
+      &.active {
         text-decoration: none;
         color: $brand-accent-color;
       }
@@ -72,12 +82,15 @@ header {
     .navbar-fixed-top { transform: translateY(-100%); };
   }
 
+  .navbar-fixed-top { opacity: 0; }
+
   &.headroom--top .navbar-fixed-top { display: none; }
 
   &.headroom--pinned {
     &.headroom--top .navbar-fixed-top { display: none; }
-    &.headroom--not-top .navbar-fixed-top { display: block; transform: translateY(0%); }
+    &.headroom--not-top .navbar-fixed-top { opacity: 1; display: block; transform: translateY(0%); }
   }
+
 }
 
 footer {
