@@ -43,9 +43,23 @@ header {
 
     a {
       color: $headings-color;
+      position: relative;
       &:hover,
       &:focus {
         text-decoration: none;
+        span {
+          transform: rotate(-12deg);
+          color: $brand-accent-color;
+        }
+
+      }
+      span {
+        position: absolute;
+        font-family: 'Poiret One';
+        font-size: 30px;
+        bottom: -5px;
+        right: -40px;
+        transition: 1s;
       }
     }
   }
