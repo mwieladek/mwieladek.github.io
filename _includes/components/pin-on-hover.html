@@ -1,0 +1,22 @@
+{% if post %}
+<div class="pin-button">
+    <a href="//www.pinterest.com/pin/create/button/?url={{post.url | prepend: site.baseurl | prepend: site.url | uri_escape }}&media={{ '/resources/img/' | append:post.cover | prepend: site.baseurl | prepend: site.url | uri_escape }}&description={{ post.excerpt | uri_escape}}"
+       data-pin-do="buttonPin"
+       data-pin-shape="round"
+       data-pin-height="32">
+        <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" />
+    </a>
+</div>
+
+{%  else if %}
+
+<div class="pin-button">
+    <a href="//www.pinterest.com/pin/create/button/?url={{page.url | prepend: site.baseurl | prepend: site.url | uri_escape }}&media={{ '/resources/img/' | append:page.cover | prepend: site.baseurl | prepend: site.url | uri_escape }}&description={{ page.excerpt | uri_escape}}"
+       data-pin-do="buttonPin"
+       data-pin-shape="round"
+       data-pin-height="32">
+        <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_32.png" />
+    </a>
+</div>
+
+{% endif %}

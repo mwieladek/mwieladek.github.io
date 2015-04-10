@@ -25,25 +25,7 @@
         background-color: rgba(0,0,0,.4);
       }
 
-      .pin-button {
-        position: absolute!important;
-        top: 1em;
-        right: 1em;
-        opacity: 0;
-        transition: $transition-speed;
-
-        a {
-          z-index: 9999;
-          &:hover {
-            box-shadow: 0 0 10px black;
-            border-radius: 50%;
-            transition: box-shadow .2s;
-            cursor: pointer;
-          }
-        }
-      }
-
-      &:hover .pin-button { opacity: 1; }
+      @include pin-on-hover();
     }
 
   }
